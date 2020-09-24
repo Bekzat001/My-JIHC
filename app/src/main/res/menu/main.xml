@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/clockWise"
+        android:title="Clockwase"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_clockwase"/>
+
+    <item
+        android:id="@+id/fade"
+        android:title="Fade"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+
+    <item
+        android:id="@+id/zoom"
+        android:title="Zoom"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:id="@+id/blink"
+        android:title="Blink"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+    <item
+        android:id="@+id/move"
+        android:title="Move"
+        app:showAsAction="never"
+        android:icon="@mipmap/ic_launcher"/>
+
+</menu>

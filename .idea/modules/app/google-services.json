@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "525215980555",
+    "firebase_url": "https://my-jihc.firebaseio.com",
+    "project_id": "my-jihc",
+    "storage_bucket": "my-jihc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525215980555:android:f0cc99d5ec2e702b8ebb0e",
+        "android_client_info": {
+          "package_name": "com.example.myjihc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525215980555-vb5q5f861so3mkatg16hp08k6tjk8bll.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myjihc",
+            "certificate_hash": "daae44939b214ba161ecc8713e2e5f3cfad82023"
+          }
+        },
+        {
+          "client_id": "525215980555-g5i77jn2spgur0erg2e8fh2s5ssnpd89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmhZB7qd8b3oD8L4imjPNT524PLS6_obs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525215980555-g5i77jn2spgur0erg2e8fh2s5ssnpd89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
