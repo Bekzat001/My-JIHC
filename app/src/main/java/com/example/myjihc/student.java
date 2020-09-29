@@ -1,16 +1,11 @@
 package com.example.myjihc;
 
 public class student {
-    public String fullName, UserName, Email, Gender;
+    public String fullName, Email, Group;
 
-    public student () {
-
-    }
-
-    public student(String fullName, String userName, String email, String gender) {
+    public student(String fullName, String group, String email) {
         this.fullName = fullName;
-        UserName = userName;
+        Group = group;
         Email = email;
-        Gender = gender;
     }
 }

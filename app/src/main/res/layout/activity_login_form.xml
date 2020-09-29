@@ -11,6 +11,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:contentDescription="TODO"
         app:srcCompat="@drawable/ic_baseline_insert_emoticon_24" />
 
     <ProgressBar

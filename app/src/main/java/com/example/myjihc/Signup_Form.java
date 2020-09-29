@@ -25,8 +25,6 @@ import org.w3c.dom.Text;
 public class Signup_Form extends AppCompatActivity {
 
     EditText txt_fullName, txt_group, txtEmail, txtPassword, txtConfirmPassword;
-    RadioButton radioGenderMale;
-    RadioButton radioGenderFemale;
     Button btn_register;
     ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
@@ -45,8 +43,6 @@ public class Signup_Form extends AppCompatActivity {
         txtPassword = (EditText) findViewById(R.id.txt_password);
         txtConfirmPassword = (EditText) findViewById(R.id.txt_confirm_password);
         btn_register = (Button) findViewById(R.id.buttonRegister);
-        radioGenderMale = (RadioButton) findViewById(R.id.radio_male);
-        radioGenderFemale = (RadioButton) findViewById(R.id.radio_female);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Student");
@@ -55,22 +51,11 @@ public class Signup_Form extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String gender = "";
                 final String fullName = txt_fullName.getText().toString().trim();
                 final String group = txt_group.getText().toString().trim();
                 final String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString().trim();
                 String confirmpassword = txtConfirmPassword.getText().toString().trim();
-
-              if(radioGenderMale.isChecked()) {
-
-                  gender="Male";
-              }
-              final String finalGender = gender;
-                Toast.makeText(Signup_Form.this, finalGender.toString(), Toast.LENGTH_LONG).show();
-              if (radioGenderFemale.isChecked()) {
-                  gender="Female";
-              }
 
                 if (TextUtils.isEmpty(fullName)) {
                     Toast.makeText(Signup_Form.this, "Full Name", Toast.LENGTH_SHORT).show();
@@ -103,8 +88,7 @@ public class Signup_Form extends AppCompatActivity {
                                     information = new student (
                                             fullName,
                                             group,
-                                            email,
-                                            finalGender
+                                            email
                                     );
 
                                     FirebaseDatabase .getInstance().getReference("Student")
@@ -121,12 +105,13 @@ public class Signup_Form extends AppCompatActivity {
                                     });
 
                                 } else {
+                                    Toast.makeText(Signup_Form.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                                  }
 
                             }
                         });
 
-
+/*
 
                 if (TextUtils.isEmpty(fullName)) {
                     Toast.makeText(Signup_Form.this, "Full Name", Toast.LENGTH_SHORT).show();
@@ -172,10 +157,14 @@ public class Signup_Form extends AppCompatActivity {
 
                                 }
                             });
-                }
+                }*/
 
             }
         });
 
+    }
+
+    public void btn_signupForm(View view) {
+        startActivity(new Intent(getApplicationContext(), Login_form.class));
     }
 }

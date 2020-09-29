@@ -50,7 +50,7 @@ public class Login_form extends AppCompatActivity {
                     return;
                 }
 
-                if (password.length()<6) {
+                if (password.length()<8) {
 
                     Toast.makeText(Login_form.this, "not enogh characters", Toast.LENGTH_SHORT).show();
                 }
@@ -70,10 +70,9 @@ public class Login_form extends AppCompatActivity {
             }
         });
 
-
     }
 
     public void btn_signupForm(View view) {
-        startActivity(new Intent(getApplicationContext(),Login_form.class));
+        startActivity(new Intent(getApplicationContext(),Signup_Form.class));
     }
 }
