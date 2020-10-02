@@ -29,7 +29,6 @@ public class Signup_Form extends AppCompatActivity {
     ProgressBar progressBar;
     private FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
-    String gender="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +97,7 @@ public class Signup_Form extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
 
                                             Toast.makeText(Signup_Form.this, "Registration complete", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                            startActivity(new Intent(getApplicationContext(), SecondActivity.class));
 
 
                                         }
@@ -106,13 +105,12 @@ public class Signup_Form extends AppCompatActivity {
 
                                 } else {
                                     Toast.makeText(Signup_Form.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
-                                 }
+                                }
 
                             }
                         });
 
 /*
-
                 if (TextUtils.isEmpty(fullName)) {
                     Toast.makeText(Signup_Form.this, "Full Name", Toast.LENGTH_SHORT).show();
                     return;
@@ -134,27 +132,21 @@ public class Signup_Form extends AppCompatActivity {
                     return;
                 }
                 if (password.length()<6) {
-
                     Toast.makeText(Signup_Form.this, "not enogh characters", Toast.LENGTH_SHORT).show();
                 }
                 progressBar.setVisibility(View.VISIBLE);
-
                 if (password.equals(confirmpassword)) {
                     firebaseAuth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(Signup_Form.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
-
                                     progressBar.setVisibility(View.GONE);
-
                                     if (task.isSuccessful()) {
                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                         Toast.makeText(Signup_Form.this, "Registration complete", Toast.LENGTH_SHORT).show();
                                     } else {
-
                                         Toast.makeText(Signup_Form.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                                     }
-
                                 }
                             });
                 }*/

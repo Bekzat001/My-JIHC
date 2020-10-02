@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,21 +51,24 @@ public class Login_form extends AppCompatActivity {
                     return;
                 }
 
-                if (password.length()<8) {
+                if (password.length()<6) {
 
                     Toast.makeText(Login_form.this, "not enogh characters", Toast.LENGTH_SHORT).show();
                 }
+
+                Log.i("LoginForm", "on click");
                 firebaseAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(Login_form.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    Log.i("LoginForm", "sign in successfull");
+                                    startActivity(new Intent(Login_form.this, SecondActivity.class));
                                 } else {
 
                                     Toast.makeText(Login_form.this, "Login Failed or User not Available", Toast.LENGTH_SHORT).show();
                                 }
- }
+                            }
                         });
 
             }

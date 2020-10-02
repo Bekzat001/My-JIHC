@@ -23,13 +23,14 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
         recyclerView = findViewById(R.id.recyclerView);
         btnChange = findViewById(R.id.btnChange);
         furnitureList = new ArrayList<>();
 
-        furnitureList.add(new Furniture(R.drawable.log, "Джоконда", "5дв крем", "5", "350"));
-        furnitureList.add(new Furniture(R.drawable.log, "Роселла", "4дв крем", "4", "400"));
-        furnitureList.add(new Furniture(R.drawable.log, "Патрисия", "6дв крем", "3", "450"));
+        furnitureList.add(new Furniture(R.drawable.jokondaoreh, "Джоконда", "5дв крем", 5, 350));
+        furnitureList.add(new Furniture(R.drawable.log, "Роселла", "4дв крем", 4, 400));
+        furnitureList.add(new Furniture(R.drawable.log, "Патрисия", "6дв крем", 3, 450));
 
         furnitureListAdapter = new FurnitureListAdapter(this, furnitureList);
 
@@ -50,9 +51,7 @@ public class SecondActivity extends AppCompatActivity {
                 } else {
                     recyclerView.setLayoutManager(linearLayoutManager);
                 }
-
                 furnitureListAdapter.notifyDataSetChanged();
-
             }
         });
     }

@@ -51,7 +51,7 @@ public class FurnitureListAdapter extends RecyclerView.Adapter<FurnitureListAdap
         sborka.photo.setImageResource(item.getPhoto());
         sborka.title.setText(item.getTitle());
         sborka.desc.setText(item.getDesc());
-        sborka.count.setText(item.getCount());
+        sborka.count.setText(""+item.getCount());
         sborka.price.setText(""+item.getPrice());
     }
 
