@@ -30,7 +30,7 @@ public class FurnitureListAdapter extends RecyclerView.Adapter<FurnitureListAdap
             price = view.findViewById(R.id.price);
         }
     }
-
+    
     public FurnitureListAdapter(Context context, List<Furniture> furnitureList) {
         this.context = context;
         this.furnitureList = furnitureList;

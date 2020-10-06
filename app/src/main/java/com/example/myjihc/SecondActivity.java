@@ -1,8 +1,10 @@
 package com.example.myjihc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -21,9 +23,33 @@ public class SecondActivity extends AppCompatActivity {
     boolean layoutType = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        initViews();
+        initRecyclerItemClick();
+    }
+    public void initRecyclerItemClick() {
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(this, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, final int pos) {
+                        Intent intent = new Intent(SecondActivity.this, MebelActivity.class);
+                        intent.putExtra("mebelName", furnitureList.get(pos).getTitle());
+                        intent.putExtra("mebelDesc", furnitureList.get(pos).getDesc());
+                        intent.putExtra("mebelCount", ""+furnitureList.get(pos).getCount());
+                        intent.putExtra("mebelPrice", ""+furnitureList.get(pos).getPrice());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+                        Toast.makeText(SecondActivity.this, "onLongItemClick", Toast.LENGTH_SHORT).show();
+                    }
+                })
+        );
+    }
+    public void initViews() {
         recyclerView = findViewById(R.id.recyclerView);
         btnChange = findViewById(R.id.btnChange);
         furnitureList = new ArrayList<>();
@@ -54,5 +80,6 @@ public class SecondActivity extends AppCompatActivity {
                 furnitureListAdapter.notifyDataSetChanged();
             }
         });
+
     }
 }
